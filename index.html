@@ -5,17 +5,27 @@
 	 <title>vue-初识</title>
    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
+<style type="text/css">
+.active{
+  color:red;
+}
+</style>
 <body>
-    <div id="app">
-      <div v-html="message"></div>
+  <div id="app">
+    <label>选择</label>
+    <input type="checkbox" v-model="active">
+    <br><br>
+    <div v-bind:class="{'active':active}">
+      vue.js
     </div>
+  </div>
 <script>
-new Vue({
-  el:'#app',
-  data:{
-    message:'<h1>Hello world!</h1>'
-  }
-})
+  new Vue({
+    el:'#app',
+    data:{
+      active:false
+    }
+  })
 </script>
 
 </body>
